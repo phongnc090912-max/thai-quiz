@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Thái Quiz</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+<body>
+
+    <div class="background">
+
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+
+    </div>
+
+
+    <div class="container">
+
+        <header>
+
+            <div class="logo">
+                🌾
+            </div>
+
+            <h1>
+                THÁI QUIZ
+            </h1>
+
+            <p class="subtitle">
+                Khám phá văn hóa và đời sống
+                dân tộc Thái ở Việt Nam
+            </p>
+
+        </header>
+
+
+        <!-- START -->
+
+        <section
+            id="startScreen"
+            class="screen active"
+        >
+
+            <div class="intro-card">
+
+                <h2>
+                    🧠 Bạn hiểu biết về dân tộc Thái đến đâu?
+                </h2>
+
+                <p>
+                    Hãy trả lời các câu hỏi về lịch sử,
+                    văn hóa, ngôn ngữ, trang phục,
+                    nhà ở và đời sống của cộng đồng
+                    dân tộc Thái tại Việt Nam.
+                </p>
+
+
+                <div class="features">
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            ❓
+                        </div>
+
+                        <span>
+                            10 câu hỏi
+                        </span>
+
+                    </div>
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            ❤️
+                        </div>
+
+                        <span>
+                            3 mạng
+                        </span>
+
+                    </div>
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            ⏱️
+                        </div>
+
+                        <span>
+                            15 giây/câu
+                        </span>
+
+                    </div>
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            🏆
+                        </div>
+
+                        <span>
+                            Tính điểm
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="primary-btn"
+                    onclick="startGame()"
+                >
+                    BẮT ĐẦU CHƠI
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- GAME -->
+
+        <section
+            id="gameScreen"
+            class="screen"
+        >
+
+            <div class="game-top">
+
+                <div class="stat">
+
+                    <div class="stat-label">
+                        Điểm
+                    </div>
+
+                    <div
+                        class="stat-value"
+                        id="score"
+                    >
+                        0
+                    </div>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <div class="stat-label">
+                        Thời gian
+                    </div>
+
+                    <div
+                        class="stat-value timer"
+                        id="timer"
+                    >
+                        15
+                    </div>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <div class="stat-label">
+                        Mạng
+                    </div>
+
+                    <div
+                        class="stat-value hearts"
+                        id="hearts"
+                    >
+                        ❤️❤️❤️
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="progress-container">
+
+                <div class="progress-info">
+
+                    <span id="questionCounter">
+                        Câu 1 / 10
+                    </span>
+
+                    <span class="combo">
+                        🔥 Combo:
+                        <span id="combo">
+                            0
+                        </span>
+                    </span>
+
+                </div>
+
+
+                <div class="progress-bar">
+
+                    <div
+                        class="progress-fill"
+                        id="progressFill"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="question-card">
+
+                <div
+                    class="question-number"
+                    id="questionNumber"
+                >
+                    CÂU 01
+                </div>
+
+
+                <div
+                    class="question"
+                    id="question"
+                >
+                    Câu hỏi
+                </div>
+
+
+                <div
+                    class="answers"
+                    id="answers"
+                ></div>
+
+
+                <div
+                    class="feedback"
+                    id="feedback"
+                ></div>
+
+
+                <div class="next-container">
+
+                    <button
+                        class="primary-btn next-btn"
+                        id="nextButton"
+                        onclick="nextQuestion()"
+                    >
+                        CÂU TIẾP →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RESULT -->
+
+        <section
+            id="resultScreen"
+            class="screen"
+        >
+
+            <div class="result-card">
+
+                <div
+                    class="result-icon"
+                    id="resultIcon"
+                >
+                    🏆
+                </div>
+
+
+                <h2 id="resultTitle">
+                    Hoàn thành!
+                </h2>
+
+
+                <p
+                    class="result-message"
+                    id="resultMessage"
+                >
+                    Kết quả của bạn
+                </p>
+
+
+                <div class="score-circle">
+
+                    <div
+                        class="score-number"
+                        id="finalScore"
+                    >
+                        0
+                    </div>
+
+                    <div class="score-label">
+                        điểm
+                    </div>
+
+                </div>
+
+
+                <div class="result-stats">
+
+                    <div class="result-stat">
+
+                        <strong
+                            id="correctCount"
+                        >
+                            0
+                        </strong>
+
+                        <span>
+                            Câu đúng
+                        </span>
+
+                    </div>
+
+
+                    <div class="result-stat">
+
+                        <strong
+                            id="wrongCount"
+                        >
+                            0
+                        </strong>
+
+                        <span>
+                            Câu sai
+                        </span>
+
+                    </div>
+
+
+                    <div class="result-stat">
+
+                        <strong
+                            id="bestCombo"
+                        >
+                            0
+                        </strong>
+
+                        <span>
+                            Combo cao nhất
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="primary-btn"
+                    onclick="startGame()"
+                >
+                    🔄 CHƠI LẠI
+                </button>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
