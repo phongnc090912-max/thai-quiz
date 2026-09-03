@@ -4,7 +4,7 @@
 
 **Thai Ethnic Quiz** là một website quiz tương tác được xây dựng nhằm giúp người dùng tìm hiểu thêm về **dân tộc Thái ở Việt Nam** thông qua những câu hỏi trắc nghiệm thú vị và dễ tiếp cận.
 
-🌐 **Website:** `Coming soon`
+🌐 **Website:** `https://phongnc090912-max.github.io/thai-quiz/`
 
 ---
 
