@@ -1,4 +1,4 @@
-Thai Ethnic Quiz
+# Thai Ethnic Quiz
 
 > **Khám phá văn hóa – Tìm hiểu lịch sử – Thử thách kiến thức về dân tộc Thái Việt Nam**
 
